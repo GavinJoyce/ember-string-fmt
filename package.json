@@ -1,7 +1,7 @@
 {
   "name": "ember-string-fmt",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "String interpolation, formally know as `Ember.String.fmt`.",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -11,7 +11,7 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": "github.com/gavinjoyce/ember-string-fmt",
   "engines": {
     "node": ">= 0.10.0"
   },
