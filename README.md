@@ -1,5 +1,7 @@
 # ember-string-fmt
 
+[![Build Status](https://travis-ci.org/GavinJoyce/ember-string-fmt.svg?branch=master)](https://travis-ci.org/GavinJoyce/ember-string-fmt)
+
 The string interpolation function formally known as `Ember.String.fmt`.
 
 `Ember.String.fmt` has been depreciated in favor of [ES6 String Templates](http://babeljs.io/docs/learn-es2015/#template-strings) which should be used in most cases. If you construct string templates dynamically, you may find `fmt` useful.
