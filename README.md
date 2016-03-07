@@ -1,8 +1,23 @@
-# Ember-string-fmt
+# ember-string-fmt
 
-This README outlines the details of collaborating on this Ember addon.
+The string interpolation function formally known as `Ember.String.fmt`.
+
+`Ember.String.fmt` has been depreciated in favor of [ES6 String Templates](http://babeljs.io/docs/learn-es2015/#template-strings) which should be used in most cases. If you construct string templates dynamically, you may find `fmt` useful.
 
 ## Installation
+
+`ember install ember-string-fmt`
+
+## Usage
+
+```js
+import fmt from 'ember-string-fmt';
+
+let name = 'Alex';
+let greeting = fmt('hi %@', name); //=> 'hi Alex'
+```
+
+## Repository Installation
 
 * `git clone` this repository
 * `npm install`
