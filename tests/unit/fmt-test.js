@@ -16,7 +16,7 @@ test('\'%@08 %@07 %@06 %@05 %@04 %@03 %@02 %@01\'.fmt(\'One\', \'Two\', \'Three\
 });
 
 test('\'data: %@\'.fmt({ id: 3 }) => \'data: {id: 3}\'', function(assert) {
-  assert.equal(fmt('data: %@', [{ id: 3 }]), 'data: {id: 3}');
+  assert.equal(fmt('data: %@', [{ id: 3 }]), 'data: { id: 3 }');
 });
 
 test('works with argument form', function(assert) {
