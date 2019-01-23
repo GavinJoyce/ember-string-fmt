@@ -1,6 +1,6 @@
 {
   "name": "ember-string-fmt",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "String interpolation, formally know as `Ember.String.fmt`.",
   "keywords": [
     "ember-addon"
