@@ -1,7 +1,5 @@
-import Ember from 'ember';
-
-let inspect = Ember.inspect;
-let isArray = Ember.isArray;
+import { inspect } from '@ember/debug';
+import { isArray } from '@ember/array';
 
 export default function(str, formats) {
   var cachedFormats = formats;
@@ -19,6 +17,7 @@ export default function(str, formats) {
   return str.replace(/%@([0-9]+)?/g, function(s, argIndex) {
     argIndex = (argIndex) ? parseInt(argIndex, 10) - 1 : idx++;
     s = cachedFormats[argIndex];
-    return (s === null) ? '(null)' : (s === undefined) ? '' : inspect(s);
+    s = typeof s === 'string' ? s : inspect(s);
+    return (s === null) ? '(null)' : (s === undefined) ? '' : s;
   });
 }

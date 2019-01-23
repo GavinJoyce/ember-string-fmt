@@ -1,5 +1,6 @@
 import { module, test } from 'qunit';
 import fmt from 'ember-string-fmt';
+import { VERSION } from '@ember/version'
 
 module('fmt');
 
@@ -16,7 +17,11 @@ test('\'%@08 %@07 %@06 %@05 %@04 %@03 %@02 %@01\'.fmt(\'One\', \'Two\', \'Three\
 });
 
 test('\'data: %@\'.fmt({ id: 3 }) => \'data: {id: 3}\'', function(assert) {
-  assert.equal(fmt('data: %@', [{ id: 3 }]), 'data: {id: 3}');
+  // The whitespace output of hashes passed through Ember.inspect differs from 3.x. We need have different output whether it's 2.x or 3.x
+  let emberVersion = /\d/.exec(VERSION);
+  let emberInt = parseInt(emberVersion[0], 10);
+  let hashOutput = emberInt > 2 ? '{ id: 3 }' : '{id: 3}'
+  assert.equal(fmt('data: %@', [{ id: 3 }]), `data: ${hashOutput}`);
 });
 
 test('works with argument form', function(assert) {
